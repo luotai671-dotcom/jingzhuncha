@@ -52,3 +52,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: Submit URLs to IndexNow
+        run: node submit-indexnow.js
+
+
