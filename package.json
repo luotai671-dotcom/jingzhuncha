@@ -1,0 +1,19 @@
+{
+  "name": "jcjingzhuncha",
+  "version": "1.0.0",
+  "description": "机场精准查 - 真实线路独立实测与客观评测",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "indexnow": "node submit-indexnow.js"
+  },
+  "keywords": [
+    "机场精准查",
+    "机场推荐",
+    "机场测评",
+    "线路测速",
+    "IP纯净度",
+    "TUN分流"
+  ],
+  "author": "机场精准查实验室",
+  "license": "ISC"
+}

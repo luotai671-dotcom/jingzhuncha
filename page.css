@@ -59,3 +59,26 @@
 .rank-jump-list a:hover,.rank-jump-list a.active{background:#111c35;color:#fff;transform:translateY(-1px)}.rank-jump-list a:hover b,.rank-jump-list a:hover em,.rank-jump-list a.active b,.rank-jump-list a.active em{color:#a9baff}.rank-jump-list a:hover b i,.rank-jump-list a.active b i{background:#5577f2;color:#fff}
 .airport-card{scroll-margin-top:205px}
 @media(max-width:850px){.rank-jump{top:0;margin-left:-7vw;margin-right:-7vw;margin-bottom:24px}.rank-jump-head{padding:11px 7vw}.rank-jump-head small{display:none}.rank-jump-list{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}.rank-jump-list a{flex:0 0 128px;border-right:1px solid #d7e0ed!important;border-bottom:0!important}.rank-jump-list a.active{transform:none}.airport-card{scroll-margin-top:180px}}
+
+/* 深度长文通用样式增强 */
+.article-breadcrumbs{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:20px;font-size:12px;color:#65738a}
+.article-breadcrumbs a{color:#3158d5;text-decoration:none;font-weight:600}
+.article-breadcrumbs span{color:#a0aec0}
+.article-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 32px}
+.article-tag-badge{display:inline-block;padding:4px 10px;background:#eef2ff;color:#3b5998;border:1px solid #dbeafe;font-size:11px;font-weight:700;border-radius:3px}
+.knowledge-article pre{margin:28px 0;padding:20px 22px;background:#0f172a;color:#f1f5f9;border-radius:6px;overflow-x:auto;font:13px/1.7 var(--mono);box-shadow:0 8px 24px rgba(15,23,42,.12);border:1px solid #1e293b}
+.knowledge-article pre code{background:transparent;padding:0;color:inherit;font-size:inherit}
+.knowledge-article code{padding:3px 7px;background:#eef2f7;color:#1e293b;border-radius:3px;font:13px var(--mono)}
+.knowledge-article .table-responsive{overflow-x:auto;margin:32px 0;border:1px solid #dbe2ed;border-radius:6px;background:#fff;box-shadow:0 6px 18px rgba(37,55,91,.04)}
+.knowledge-article table{width:100%;min-width:650px;border-collapse:collapse;font-size:13px;text-align:left}
+.knowledge-article th{background:#111c35;color:#fff;padding:14px 16px;font-weight:700;font-size:12px;letter-spacing:.02em;border-right:1px solid #1e293b}
+.knowledge-article td{padding:14px 16px;border-bottom:1px solid #e2e8f0;border-right:1px solid #edf2f7;color:#334155;line-height:1.6}
+.knowledge-article tr:last-child td{border-bottom:0}
+.knowledge-article tr:hover td{background:#f8fafc}
+.knowledge-article hr{margin:40px 0;border:0;border-top:1px solid #e2e8f0}
+.knowledge-article h3{margin:32px 0 12px;font-size:20px;letter-spacing:-.02em;color:#0f172a}
+.knowledge-article ul{padding-left:22px;margin:16px 0}
+.knowledge-article li{margin-bottom:8px}
+.knowledge-article a{color:#2563eb;text-decoration:underline;text-underline-offset:3px}
+.knowledge-article a:hover{color:#1d4ed8}
+

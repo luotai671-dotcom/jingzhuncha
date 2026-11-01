@@ -14,6 +14,45 @@
       var p = location.pathname.toLowerCase();
       var s = location.search;
       var q = new URLSearchParams(s);
+
+      // 常见一级频道 Clean URL 映射
+      if (p === '/reviews' || p === '/reviews/') { location.replace('reviews.html' + s); return; }
+      if (p === '/compare' || p === '/compare/') { location.replace('compare.html' + s); return; }
+      if (p === '/library' || p === '/library/') { location.replace('library.html' + s); return; }
+      if (p === '/recommend' || p === '/recommend/') { location.replace('recommend.html' + s); return; }
+      if (p === '/bonus' || p === '/bonus/') { location.replace('bonus.html' + s); return; }
+      if (p === '/about' || p === '/about/') { location.replace('about.html' + s); return; }
+      if (p === '/help' || p === '/help/') { location.replace('help.html' + s); return; }
+      if (p === '/warning' || p === '/warning/') { location.replace('warning.html' + s); return; }
+
+      // 301 隔离 /go/ 内部跳转路由映射
+      var goMap = {
+        'shandianshu': 'https://chenpin.shandianshuaff.com/#/?code=m28TvPVX',
+        'dalaoyun': 'https://chenpin01.dalaoyunaff.com/#/?code=GQ6CL6Km',
+        'huanqiuti': 'https://chenpingan01.huanqiutiaff.com/#/?code=FGCcYdFo',
+        'liulianyun': 'https://chenpingan.liulianyunaff.com/#/?code=7pdjs9zt',
+        'yunjiexian': 'https://chenpingan.yunjiexianaff.com/#/?code=xLJGaIHM',
+        'shenxing': 'https://chenpingan01.shenxingaff.com/#/?code=RZ48f9wP',
+        'ermaoyun': 'https://server.ermaotztz3.homes/#/?code=Vf45aB7S',
+        'guangsuyun': 'https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5',
+        'bianyuan': 'https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh'
+      };
+      var goMatch = p.match(/^\/go\/([a-z0-9_-]+)/);
+      if (goMatch && goMap[goMatch[1]]) {
+        location.replace(goMap[goMatch[1]]);
+        return;
+      }
+
+      // /articles/ 无后缀 clean URL 自动映射至 .html
+      if (p.startsWith('/articles/')) {
+        var slug = p.replace(/^\/articles\//, '').replace(/\/$/, '');
+        if (!slug.endsWith('.html')) {
+          location.replace('articles/' + slug + '.html' + s);
+          return;
+        }
+      }
+
+      // 传统文章 ID 与机场参数兼容
       var postId = q.get('id') || q.get('post') || q.get('articleId');
       if (p.includes('/article') || p.includes('/post') || p.includes('/library')) {
         location.replace('library.html' + (postId ? '?id=' + postId : ''));
