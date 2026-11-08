@@ -229,7 +229,7 @@ window.AIRPORT_DATA = [
     name: '云界线',
     tag: '重度可选',
     logo: 'assets/airports/yunjiexian.png',
-    url: 'https://chenpingan.yunjiexianaff.com/#/?code=xLJGaIHM',
+    url: 'https://chenpinga.yunjiexianaff.com/#/?code=rTCMGvQT',
     coupon: 'yjx888',
     price: '￥15.40/月',
     originalPrice: '￥22.00/月',
