@@ -320,7 +320,7 @@ ${contentHtml}
         ${relatedHtml}
         <a href="../reviews.html">前往 机场测评专区 查看晚高峰抗压评测 →</a>
         <a href="../compare.html">前往 机场对比列表 横向对比各家参数 →</a>
-        <a href="../library.html">返回 知识库首页 浏览全站 53 篇专题 →</a>
+        <a href="../library.html">返回 知识库首页 浏览全站 55 篇专题 →</a>
       </div>
     </article>
   </main>
@@ -424,7 +424,9 @@ let kbContent = fs.readFileSync(KB_PATH, 'utf8');
 const idConfig = {
   'network-speed-drop-single-thread-bottleneck': { id: 51, category: '测速' },
   'ip-quality-fraud-score-detection-guide': { id: 52, category: '跨境' },
-  'tun-mode-vs-system-proxy-leak-fix': { id: 53, category: '安全' }
+  'tun-mode-vs-system-proxy-leak-fix': { id: 53, category: '安全' },
+  'anti-blocking-backup-node-redundancy-guide': { id: 54, category: '安全' },
+  'node-multiplier-trap-traffic-drain-rules-guide': { id: 55, category: '新手' }
 };
 
 const catAdviceIdx = kbContent.indexOf('const categoryAdvice =');
@@ -465,7 +467,7 @@ if (delimIdx !== -1) {
   console.warn('⚠️ [KnowledgeBase] 未找到确切数组结束标识，跳过追加');
 }
 
-kbContent = kbContent.replace('搜索 50 篇知识文章', '搜索 53 篇知识文章');
+kbContent = kbContent.replace(/搜索 \d+ 篇知识文章/g, '搜索 55 篇知识文章');
 fs.writeFileSync(KB_PATH, kbContent, 'utf8');
 
 // 7. 更新 sitemap.xml
@@ -474,9 +476,13 @@ const urlsToAdd = [
   { loc: `https://${HOST}/articles/network-speed-drop-single-thread-bottleneck.html`, priority: '0.9', freq: 'weekly' },
   { loc: `https://${HOST}/articles/ip-quality-fraud-score-detection-guide.html`, priority: '0.9', freq: 'weekly' },
   { loc: `https://${HOST}/articles/tun-mode-vs-system-proxy-leak-fix.html`, priority: '0.9', freq: 'weekly' },
+  { loc: `https://${HOST}/articles/anti-blocking-backup-node-redundancy-guide.html`, priority: '0.9', freq: 'weekly' },
+  { loc: `https://${HOST}/articles/node-multiplier-trap-traffic-drain-rules-guide.html`, priority: '0.9', freq: 'weekly' },
   { loc: `https://${HOST}/library.html?id=51`, priority: '0.8', freq: 'monthly' },
   { loc: `https://${HOST}/library.html?id=52`, priority: '0.8', freq: 'monthly' },
-  { loc: `https://${HOST}/library.html?id=53`, priority: '0.8', freq: 'monthly' }
+  { loc: `https://${HOST}/library.html?id=53`, priority: '0.8', freq: 'monthly' },
+  { loc: `https://${HOST}/library.html?id=54`, priority: '0.8', freq: 'monthly' },
+  { loc: `https://${HOST}/library.html?id=55`, priority: '0.8', freq: 'monthly' }
 ];
 
 urlsToAdd.forEach(u => {
