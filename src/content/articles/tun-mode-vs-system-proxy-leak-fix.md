@@ -146,7 +146,7 @@ curl -s https://ipinfo.io/json
    ```
    完成后重启电脑，物理网卡路由表即刻恢复出厂默认状态。
 4. **进阶协同与推荐配置**：若在解决分流问题后发现特定节点测速缓慢，可联动参考 [机场精准查：为什么本地 1000M 宽带测速只有 50M？晚高峰骨干网互联点拥塞与单线程限速深度排查](/articles/network-speed-drop-single-thread-bottleneck.html) 进一步排查链路带宽时延积。更多基础知识可随时查阅 [知识库首页](/library)。
-5. **推荐高可用节点工具**：如需搭载适配 TUN 架构且全节点支持 UDP 转发与高纯净度的服务，可点击站内 301 隔离入口直接获取：<a href="/go/yunjiexian" rel="nofollow sponsored noopener noreferrer" target="_blank">获取云界线全协议支持套餐</a> 或 <a href="/go/shenxing" rel="nofollow sponsored noopener noreferrer" target="_blank">获取神行加速高低时延适配节点</a>。
+5. **推荐高可用节点工具**：如需搭载适配 TUN 架构且全节点支持 UDP 转发与高纯净度的服务，可点击站内 302 隔离入口直接获取：<a href="/go/yunjiexian" rel="nofollow sponsored noopener noreferrer" target="_blank">获取云界线全协议支持套餐</a> 或 <a href="/go/shenxing" rel="nofollow sponsored noopener noreferrer" target="_blank">获取神行加速高低时延适配节点</a>。
 
 ---
 

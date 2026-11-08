@@ -1148,7 +1148,7 @@ nslookup whoami.akamai.net</code></pre>
   <li><strong>环境完全物理隔离</strong>：严禁在个人主浏览器直接挂载商业代理。必须使用指纹浏览器（如 AdsPower、Hubstudio），每个店铺/账号独立分配一个独立的 Canvas/WebGL 指纹环境。</li>
   <li><strong>静态双 ISP 节点绑定</strong>：将指纹环境与纯净的原生双 ISP 节点一对一固定绑定。杜绝使用随时漂移变动 IP 的共享节点。</li>
   <li><strong>查阅全站对比矩阵</strong>：各家出口服务商的节点属性与协议适配详情，可移步 <a href="/compare">机场对比列表</a> 获取多维度参数横评。</li>
-  <li><strong>推荐合规跳转入口</strong>：如需获取包含纯净住宅支持与原生 IP 标识的高可用服务，可通过站内 301 隔离安全链接跳转：<a href="/go/huanqiuti" rel="nofollow sponsored noopener noreferrer" target="_blank">获取环球梯原生节点资源</a> 或 <a href="/go/liulianyun" rel="nofollow sponsored noopener noreferrer" target="_blank">获取榴莲云大流量商用套餐</a>。</li>
+  <li><strong>推荐合规跳转入口</strong>：如需获取包含纯净住宅支持与原生 IP 标识的高可用服务，可通过站内 302 隔离安全链接跳转：<a href="/go/huanqiuti" rel="nofollow sponsored noopener noreferrer" target="_blank">获取环球梯原生节点资源</a> 或 <a href="/go/liulianyun" rel="nofollow sponsored noopener noreferrer" target="_blank">获取榴莲云大流量商用套餐</a>。</li>
 </ol>
 
 <hr>
@@ -1339,7 +1339,7 @@ iperf3 -c speed.testserver.net -p 5201 -P 16 -t 15 -R</code></pre>
   <li><strong>优先选择内网专线服务</strong>：内网专线（如 IEPL/IPLC）在境外过境时不经过公网国际互联出口局，直接在两端机房内网走物理光纤微波对绞，丢包率趋近于 0，单线程吞吐可逼近物理带宽上限。可参考 <a href="/reviews">机场测评专区</a> 中的各家实测数据。</li>
   <li><strong>服务端强制启用 BBRv3 / BBR 拥塞控制</strong>：BBR 算法基于“最大带宽”与“最小往返时间”建模，不再盲目将丢包作为拥塞减速指标。即便存在 3%~5% 的随机丢包，BBR 仍能维持单线程高速传输。</li>
   <li><strong>配合 IP 出口审计</strong>：出口 IP 频繁更换会诱发 CDN 节点跨区调度，可进一步结合 <a href="/articles/ip-quality-fraud-score-detection-guide.html">跨境出海网络精准查：如何用 IP 纯净度检测工具识别广播机房 IP、Anycast 欺骗与原生双 ISP 住宅出口？</a> 排查出口端风控阻断。</li>
-  <li><strong>推荐入口工具跳转</strong>：若需获取经过晚高峰抗拥塞压测认证的稳定线路通道，可使用站内 301 合规入口安全访问：<a href="/go/shandianshu" rel="nofollow sponsored noopener noreferrer" target="_blank">获取闪电鼠专线节点配置</a> 或 <a href="/go/dalaoyun" rel="nofollow sponsored noopener noreferrer" target="_blank">获取大佬云高可用套餐</a>。</li>
+  <li><strong>推荐入口工具跳转</strong>：若需获取经过晚高峰抗拥塞压测认证的稳定线路通道，可使用站内 302 合规入口安全访问：<a href="/go/shandianshu" rel="nofollow sponsored noopener noreferrer" target="_blank">获取闪电鼠专线节点配置</a> 或 <a href="/go/dalaoyun" rel="nofollow sponsored noopener noreferrer" target="_blank">获取大佬云高可用套餐</a>。</li>
 </ol>
 
 <hr>
@@ -1562,7 +1562,7 @@ curl -s https://ipinfo.io/json</code></pre>
 
 <ol>
   <li><strong>进阶协同与推荐配置</strong>：若在解决分流问题后发现特定节点测速缓慢，可联动参考 <a href="/articles/network-speed-drop-single-thread-bottleneck.html">机场精准查：为什么本地 1000M 宽带测速只有 50M？晚高峰骨干网互联点拥塞与单线程限速深度排查</a> 进一步排查链路带宽时延积。更多基础知识可随时查阅 <a href="/library">知识库首页</a>。</li>
-  <li><strong>推荐高可用节点工具</strong>：如需搭载适配 TUN 架构且全节点支持 UDP 转发与高纯净度的服务，可点击站内 301 隔离入口直接获取：<a href="/go/yunjiexian" rel="nofollow sponsored noopener noreferrer" target="_blank">获取云界线全协议支持套餐</a> 或 <a href="/go/shenxing" rel="nofollow sponsored noopener noreferrer" target="_blank">获取神行加速高低时延适配节点</a>。</li>
+  <li><strong>推荐高可用节点工具</strong>：如需搭载适配 TUN 架构且全节点支持 UDP 转发与高纯净度的服务，可点击站内 302 隔离入口直接获取：<a href="/go/yunjiexian" rel="nofollow sponsored noopener noreferrer" target="_blank">获取云界线全协议支持套餐</a> 或 <a href="/go/shenxing" rel="nofollow sponsored noopener noreferrer" target="_blank">获取神行加速高低时延适配节点</a>。</li>
 </ol>
 
 <hr>

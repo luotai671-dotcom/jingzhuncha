@@ -131,7 +131,7 @@ $$\text{吞吐健康系数} = \frac{\text{单线程下载吞吐 (Mbps)}}{\text{1
 1. **优先选择内网专线服务**：内网专线（如 IEPL/IPLC）在境外过境时不经过公网国际互联出口局，直接在两端机房内网走物理光纤微波对绞，丢包率趋近于 0，单线程吞吐可逼近物理带宽上限。可参考 [机场测评专区](/reviews) 中的各家实测数据。
 2. **服务端强制启用 BBRv3 / BBR 拥塞控制**：BBR 算法基于“最大带宽”与“最小往返时间”建模，不再盲目将丢包作为拥塞减速指标。即便存在 3%~5% 的随机丢包，BBR 仍能维持单线程高速传输。
 3. **配合 IP 出口审计**：出口 IP 频繁更换会诱发 CDN 节点跨区调度，可进一步结合 [跨境出海网络精准查：如何用 IP 纯净度检测工具识别广播机房 IP、Anycast 欺骗与原生双 ISP 住宅出口？](/articles/ip-quality-fraud-score-detection-guide.html) 排查出口端风控阻断。
-4. **推荐入口工具跳转**：若需获取经过晚高峰抗拥塞压测认证的稳定线路通道，可使用站内 301 合规入口安全访问：<a href="/go/shandianshu" rel="nofollow sponsored noopener noreferrer" target="_blank">获取闪电鼠专线节点配置</a> 或 <a href="/go/dalaoyun" rel="nofollow sponsored noopener noreferrer" target="_blank">获取大佬云高可用套餐</a>。
+4. **推荐入口工具跳转**：若需获取经过晚高峰抗拥塞压测认证的稳定线路通道，可使用站内 302 合规入口安全访问：<a href="/go/shandianshu" rel="nofollow sponsored noopener noreferrer" target="_blank">获取闪电鼠专线节点配置</a> 或 <a href="/go/dalaoyun" rel="nofollow sponsored noopener noreferrer" target="_blank">获取大佬云高可用套餐</a>。
 
 ---
 

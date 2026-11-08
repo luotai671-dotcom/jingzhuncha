@@ -353,7 +353,7 @@ ${contentHtml}
   console.log(`✅ [HTML] 已生成静态长文: articles/${art.slug}.html`);
 });
 
-// 4. 生成 /go/ 内部 301 隔离跳转文件
+// 4. 生成 /go/ 内部 302 隔离跳转文件与 _redirects 规则
 const GO_MAP = {
   shandianshu: 'https://chenpin.shandianshuaff.com/#/?code=m28TvPVX',
   dalaoyun: 'https://chenpin01.dalaoyunaff.com/#/?code=GQ6CL6Km',
@@ -390,7 +390,16 @@ Object.entries(GO_MAP).forEach(([key, targetUrl]) => {
   fs.writeFileSync(path.join(targetDir, 'index.html'), redirectHtml, 'utf8');
   fs.writeFileSync(path.join(GO_DIR, `${key}.html`), redirectHtml, 'utf8');
 });
-console.log('✅ [Redirects] 已生成 /go/ 目录 301 隔离跳转文件');
+
+// 生成 _redirects 规则文件 (支持 Cloudflare Pages / Netlify 302 临时重定向)
+const redirectsRules = [
+  '# /go/ 内部 302 临时重定向映射规则 (Affiliate Links)',
+  ...Object.entries(GO_MAP).map(([key, targetUrl]) => `/go/${key} ${targetUrl} 302`),
+  ...Object.entries(GO_MAP).map(([key, targetUrl]) => `/go/${key}/ ${targetUrl} 302`)
+].join('\n');
+fs.writeFileSync(path.join(ROOT_DIR, '_redirects'), redirectsRules + '\n', 'utf8');
+
+console.log('✅ [Redirects] 已生成 /go/ 目录 302 隔离跳转文件与 _redirects 规则');
 
 // 5. 生成一级 clean URL 入口防止任何 404
 const CHANNELS = ['reviews', 'compare', 'library', 'recommend', 'bonus', 'about', 'help', 'warning'];

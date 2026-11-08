@@ -25,7 +25,7 @@
       if (p === '/help' || p === '/help/') { location.replace('help.html' + s); return; }
       if (p === '/warning' || p === '/warning/') { location.replace('warning.html' + s); return; }
 
-      // 301 隔离 /go/ 内部跳转路由映射
+      // 302 隔离 /go/ 内部跳转路由映射
       var goMap = {
         'shandianshu': 'https://chenpin.shandianshuaff.com/#/?code=m28TvPVX',
         'dalaoyun': 'https://chenpin01.dalaoyunaff.com/#/?code=GQ6CL6Km',
