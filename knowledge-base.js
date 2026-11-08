@@ -1885,6 +1885,7 @@ function articleBody(a) {
 const app = document.getElementById('libraryApp'), params = new URLSearchParams(location.search), id = +(params.get('id') || params.get('post') || params.get('articleId') || 0);
 
 function renderArticle(a) {
+  const latestArticles = [...articles].sort((x, y) => y.id - x.id);
   document.title = `${a.title}｜机场精准查`;
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.content = a.summary;
@@ -1902,7 +1903,7 @@ function renderArticle(a) {
     ${articleBody(a)}
     <div class="related-links">
       <strong>继续阅读</strong>
-      ${articles.filter(x => x.id !== a.id).slice(0, 3).map(x => `<a href="library.html?id=${x.id}">${x.title} →</a>`).join('')}
+      ${latestArticles.filter(x => x.id !== a.id).slice(0, 3).map(x => `<a href="library.html?id=${x.id}">${x.title} →</a>`).join('')}
     </div>
   </article>`;
   
@@ -1920,7 +1921,11 @@ function renderArticle(a) {
 }
 
 function renderList(page = 1, query = '', category = '') {
-  const filtered = articles.filter(a => (!category || a.category === category) && (a.title + a.summary + a.category).toLowerCase().includes(query.toLowerCase()));
+  const metaCount = document.querySelector('.library-hero .page-meta span:first-child');
+  if (metaCount) metaCount.textContent = `${articles.length} 篇专题`;
+
+  const sorted = [...articles].sort((a, b) => b.id - a.id);
+  const filtered = sorted.filter(a => (!category || a.category === category) && (a.title + a.summary + a.category).toLowerCase().includes(query.toLowerCase()));
   const pages = Math.max(1, Math.ceil(filtered.length / 6));
   const current = Math.min(page, pages);
   const items = filtered.slice((current - 1) * 6, current * 6);
@@ -1931,7 +1936,7 @@ function renderList(page = 1, query = '', category = '') {
         <h2>热门话题与热搜指南</h2>
         <p>从基础概念到实际使用，按热门问题快速查找权威答案。</p>
       </div>
-      <input id="articleSearch" value="${query}" placeholder="搜索 55 篇知识文章 (包含原生IP、住宅代理、小火箭、Sing-box...)" aria-label="搜索知识文章">
+      <input id="articleSearch" value="${query}" placeholder="搜索 ${articles.length} 篇知识文章 (包含原生IP、住宅代理、小火箭、Sing-box...)" aria-label="搜索知识文章">
     </div>
     <div class="category-tabs">
       <button class="${category ? '' : 'active'}" data-cat="">全部</button>
