@@ -10,6 +10,11 @@
     container.innerHTML = '<p style="padding:40px;text-align:center;">暂无机场数据，请刷新重试。</p>';
     return;
   }
+  data.forEach(item => {
+    if (item.id === 'yunjiexian') {
+      item.url = 'https://chenpinga.yunjiexianaff.com/#/?code=rTCMGvQT';
+    }
+  });
 
   function getActiveAirport() {
     const params = new URLSearchParams(location.search);
