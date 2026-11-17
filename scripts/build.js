@@ -320,7 +320,7 @@ ${contentHtml}
         ${relatedHtml}
         <a href="../reviews.html">前往 机场测评专区 查看晚高峰抗压评测 →</a>
         <a href="../compare.html">前往 机场对比列表 横向对比各家参数 →</a>
-        <a href="../library.html">返回 知识库首页 浏览全站 55 篇专题 →</a>
+        <a href="../library.html">返回 知识库首页 浏览全站 57 篇专题 →</a>
       </div>
     </article>
   </main>
@@ -426,7 +426,9 @@ const idConfig = {
   'ip-quality-fraud-score-detection-guide': { id: 52, category: '跨境' },
   'tun-mode-vs-system-proxy-leak-fix': { id: 53, category: '安全' },
   'anti-blocking-backup-node-redundancy-guide': { id: 54, category: '安全' },
-  'node-multiplier-trap-traffic-drain-rules-guide': { id: 55, category: '新手' }
+  'node-multiplier-trap-traffic-drain-rules-guide': { id: 55, category: '新手' },
+  'pay-as-you-go-non-expiring-traffic-airport-guide': { id: 56, category: '新手' },
+  'high-speed-stable-airport-anycast-sla-selection-guide': { id: 57, category: '线路' }
 };
 
 const catAdviceIdx = kbContent.indexOf('const categoryAdvice =');
@@ -467,7 +469,7 @@ if (delimIdx !== -1) {
   console.warn('⚠️ [KnowledgeBase] 未找到确切数组结束标识，跳过追加');
 }
 
-kbContent = kbContent.replace(/搜索 \d+ 篇知识文章/g, '搜索 55 篇知识文章');
+kbContent = kbContent.replace(/搜索 \d+ 篇知识文章/g, '搜索 57 篇知识文章');
 fs.writeFileSync(KB_PATH, kbContent, 'utf8');
 
 // 7. 更新 sitemap.xml
@@ -482,7 +484,11 @@ const urlsToAdd = [
   { loc: `https://${HOST}/library.html?id=52`, priority: '0.8', freq: 'monthly' },
   { loc: `https://${HOST}/library.html?id=53`, priority: '0.8', freq: 'monthly' },
   { loc: `https://${HOST}/library.html?id=54`, priority: '0.8', freq: 'monthly' },
-  { loc: `https://${HOST}/library.html?id=55`, priority: '0.8', freq: 'monthly' }
+  { loc: `https://${HOST}/library.html?id=55`, priority: '0.8', freq: 'monthly' },
+  { loc: `https://${HOST}/articles/pay-as-you-go-non-expiring-traffic-airport-guide.html`, priority: '0.9', freq: 'weekly' },
+  { loc: `https://${HOST}/articles/high-speed-stable-airport-anycast-sla-selection-guide.html`, priority: '0.9', freq: 'weekly' },
+  { loc: `https://${HOST}/library.html?id=56`, priority: '0.8', freq: 'monthly' },
+  { loc: `https://${HOST}/library.html?id=57`, priority: '0.8', freq: 'monthly' }
 ];
 
 urlsToAdd.forEach(u => {
